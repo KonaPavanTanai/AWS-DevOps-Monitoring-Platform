@@ -1,4 +1,4 @@
-# 🚀 AWS DevOps Monitoring Platform
+# 🚀 AWS DevOps Monitoring Platform - CI/CD Test
 
 A production-style DevOps monitoring platform deployed on AWS EC2 with automated CI/CD using GitHub Actions. This project demonstrates cloud deployment, infrastructure automation, real-time system monitoring, application management, and DevOps best practices using AWS Free Tier services.
 
