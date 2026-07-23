@@ -2,334 +2,218 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>AWS DevOps Monitoring Platform</title>
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 
-    <title>AWS DevOps Monitoring Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <header>
+<header class="top-header">
 
-            <h1>🚀 AWS DevOps Monitoring Platform</h1>
+<div>
 
-            <p class="subtitle">
-                Production Environment
-            </p>
+<h1>
+<i class="fa-brands fa-aws"></i>
+AWS DevOps Monitoring Platform
+</h1>
 
-        </header>
+<p class="subtitle">
+EC2 • Nginx • PM2 • GitHub Actions • Node.js
+</p>
 
-        <div class="dashboard-grid">
+</div>
 
-            <!-- ========================= -->
-            <!-- SERVER INFORMATION -->
-            <!-- ========================= -->
+<div class="header-right">
 
-            <div class="card">
+<div id="clock"></div>
 
-                <h2>🖥 Server Information</h2>
+<div class="badge">
+🟢 Server Healthy
+</div>
 
-                <p><strong>Hostname:</strong>
-                    <span id="hostname">Loading...</span>
-                </p>
+</div>
 
-                <p><strong>Platform:</strong>
-                    <span id="platform">Loading...</span>
-                </p>
+</header>
 
-                <p><strong>Architecture:</strong>
-                    <span id="architecture">Loading...</span>
-                </p>
+<div class="dashboard-grid">
 
-                <p><strong>Node Version:</strong>
-                    <span id="nodeVersion">Loading...</span>
-                </p>
+<!-- SERVER -->
 
-                <p><strong>Uptime:</strong>
-                    <span id="uptime">Loading...</span>
-                </p>
+<div class="card">
 
-            </div>
+<h2><i class="fa-solid fa-server"></i> Server Information</h2>
 
-            <!-- ========================= -->
-            <!-- SYSTEM METRICS -->
-            <!-- ========================= -->
+<p><strong>Hostname</strong><span id="hostname">Loading...</span></p>
 
-            <div class="card">
+<p><strong>Platform</strong><span id="platform">Loading...</span></p>
 
-                <h2>📊 System Metrics</h2>
+<p><strong>Architecture</strong><span id="architecture">Loading...</span></p>
 
-                <p><strong>Memory Usage</strong></p>
+<p><strong>Node Version</strong><span id="nodeVersion">Loading...</span></p>
 
-                <div class="progress">
+<p><strong>Uptime</strong><span id="uptime">Loading...</span></p>
 
-                    <div id="memoryBar"
-                        class="progress-fill"></div>
+</div>
 
-                </div>
+<!-- METRICS -->
 
-                <p id="memoryPercent">0%</p>
+<div class="card">
 
-                <hr>
+<h2><i class="fa-solid fa-chart-line"></i> System Metrics</h2>
 
-                <p>
+<p>Memory Usage</p>
 
-                    <strong>Used Memory:</strong>
+<div class="progress">
+<div id="memoryBar" class="progress-fill"></div>
+</div>
 
-                    <span id="usedMemory">
-                        Loading...
-                    </span>
+<p id="memoryPercent">0%</p>
 
-                </p>
+<br>
 
-                <p>
+<p><strong>Used Memory</strong><span id="usedMemory">Loading...</span></p>
 
-                    <strong>Free Memory:</strong>
+<p><strong>Free Memory</strong><span id="freeMemory">Loading...</span></p>
 
-                    <span id="freeMemory">
-                        Loading...
-                    </span>
+<p><strong>CPU Usage</strong><span id="cpuLoad">Loading...</span></p>
 
-                </p>
+<p><strong>Disk Usage</strong><span id="diskUsage">Loading...</span></p>
 
-                <p>
+</div>
 
-                    <strong>CPU Usage:</strong>
+<!-- DEPLOYMENT -->
 
-                    <span id="cpuLoad">
-                        Loading...
-                    </span>
+<div class="card">
 
-                </p>
+<h2><i class="fa-solid fa-rocket"></i> Deployment</h2>
 
-                <p>
+<p><strong>Version</strong><span id="version">Loading...</span></p>
 
-                    <strong>Disk Usage:</strong>
+<p><strong>Build</strong><span id="build">Loading...</span></p>
 
-                    <span id="diskUsage">
-                        Loading...
-                    </span>
+<p><strong>Commit</strong><span id="commit">Loading...</span></p>
 
-                </p>
+<p><strong>Last Deployment</strong><span id="lastDeployment">Loading...</span></p>
 
-            </div>
+<p><strong>Pipeline</strong><span id="pipeline">Loading...</span></p>
 
-            <!-- ========================= -->
-            <!-- DEPLOYMENT -->
-            <!-- ========================= -->
+</div>
 
-            <div class="card">
+<!-- AWS -->
 
-                <h2>🚀 Deployment</h2>
+<div class="card">
 
-                <p>
+<h2><i class="fa-brands fa-aws"></i> AWS Services</h2>
 
-                    <strong>Version:</strong>
+<p>🟢 EC2 Instance</p>
+<p>🟢 GitHub Actions</p>
+<p>🟢 PM2 Manager</p>
+<p>🟢 Nginx Reverse Proxy</p>
+<p>🟢 CloudWatch</p>
+<p>🟢 Amazon S3 Backup</p>
 
-                    <span id="version">
-                        Loading...
-                    </span>
+</div>
 
-                </p>
+<!-- PM2 -->
 
-                <p>
+<div class="card">
 
-                    <strong>Build:</strong>
+<h2><i class="fa-solid fa-microchip"></i> PM2 Process</h2>
 
-                    <span id="build">
-                        Loading...
-                    </span>
+<p><strong>Process</strong><span id="pm2Process">Loading...</span></p>
 
-                </p>
+<p><strong>Status</strong><span id="pm2Status">Loading...</span></p>
 
-                <p>
+<p><strong>PID</strong><span id="pm2Pid">Loading...</span></p>
 
-                    <strong>Commit:</strong>
+<p><strong>CPU</strong><span id="pm2Cpu">Loading...</span></p>
 
-                    <span id="commit">
-                        Loading...
-                    </span>
+<p><strong>Memory</strong><span id="pm2Memory">Loading...</span></p>
 
-                </p>
+<p><strong>Restarts</strong><span id="pm2Restart">Loading...</span></p>
 
-                <p>
+</div>
 
-                    <strong>Last Deployment:</strong>
+<!-- HEALTH -->
 
-                    <span id="lastDeployment">
-                        Loading...
-                    </span>
+<div class="card">
 
-                </p>
+<h2><i class="fa-solid fa-heart-pulse"></i> Application Health</h2>
 
-                <p>
+<p><strong>Status</strong><span id="healthStatus">Checking...</span></p>
 
-                    <strong>Pipeline:</strong>
+</div>
 
-                    <span id="pipeline">
-                        Loading...
-                    </span>
+</div>
 
-                </p>
+<!-- QUICK LINKS -->
 
-            </div>
+<div class="card" style="margin-top:30px;">
 
-            <!-- ========================= -->
-            <!-- AWS SERVICES -->
-            <!-- ========================= -->
+<h2><i class="fa-solid fa-link"></i> Quick Links</h2>
 
-            <div class="card">
+<div class="links">
 
-                <h2>☁ AWS Services</h2>
+<a href="https://github.com/KonaPavanTanai/AWS-DevOps-Monitoring-Platform" target="_blank">
+<i class="fab fa-github"></i> GitHub Repository
+</a>
 
-                <p>🟢 EC2 Instance</p>
+<a href="/health" target="_blank">
+❤️ Health API
+</a>
 
-                <p>🟢 GitHub Actions</p>
+</div>
 
-                <p>🟢 Nginx Reverse Proxy</p>
+</div>
 
-                <p>🟢 PM2 Process Manager</p>
+<footer>
 
-                <p>🟢 CloudWatch Monitoring</p>
+<p>
+© 2026 AWS DevOps Monitoring Platform
+</p>
 
-                <p>🟢 Amazon S3 Backup</p>
+<p>
+Powered by AWS EC2 | Node.js | Express | PM2 | Nginx | GitHub Actions
+</p>
 
-            </div>
+</footer>
 
-            <!-- ========================= -->
-            <!-- PM2 -->
-            <!-- ========================= -->
+</div>
 
-            <div class="card">
+<script>
 
-                <h2>⚙️ PM2 Process Monitor</h2>
+function updateClock(){
 
-                <p>
+const now=new Date();
 
-                    <strong>Process:</strong>
+document.getElementById("clock").innerHTML=
 
-                    <span id="pm2Process">
-                        Loading...
-                    </span>
+now.toLocaleDateString()+"<br>"+now.toLocaleTimeString();
 
-                </p>
+}
 
-                <p>
+setInterval(updateClock,1000);
 
-                    <strong>Status:</strong>
+updateClock();
 
-                    <span id="pm2Status">
-                        Loading...
-                    </span>
+</script>
 
-                </p>
-
-                <p>
-
-                    <strong>PID:</strong>
-
-                    <span id="pm2Pid">
-                        Loading...
-                    </span>
-
-                </p>
-
-                <p>
-
-                    <strong>CPU:</strong>
-
-                    <span id="pm2Cpu">
-                        Loading...
-                    </span>
-
-                </p>
-
-                <p>
-
-                    <strong>Memory:</strong>
-
-                    <span id="pm2Memory">
-                        Loading...
-                    </span>
-
-                </p>
-
-                <p>
-
-                    <strong>Restarts:</strong>
-
-                    <span id="pm2Restart">
-                        Loading...
-                    </span>
-
-                </p>
-
-            </div>
-
-            <!-- ========================= -->
-            <!-- HEALTH -->
-            <!-- ========================= -->
-
-            <div class="card">
-
-                <h2>❤️ Application Health</h2>
-
-                <p>
-
-                    <strong>Status:</strong>
-
-                    <span id="healthStatus">
-
-                        Checking...
-
-                    </span>
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- ========================= -->
-        <!-- QUICK LINKS -->
-        <!-- ========================= -->
-
-        <div class="card">
-
-            <h2>🔗 Quick Links And Access</h2>
-
-            <div class="links">
-
-                <a href="https://github.com/KonaPavanTanai/AWS-DevOps-Monitoring-Platform"
-                    target="_blank">
-
-                    💻 Source Code
-
-                </a>
-
-                <a href="/health"
-                    target="_blank">
-
-                    ❤️ Health API
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="js/dashboard.js"></script>
+<script src="js/dashboard.js"></script>
 
 </body>
 
